@@ -197,7 +197,7 @@ Let's run a container that's actually of any use. An apache webserver is used to
 1. Search for `Apache` in the Docker Hub.
 
   ```
-  docker search apache
+  docker search httpd
   ```
   
 2. We'll take httpd, which is the Red Hat distribution equivalent of the Ubuntu apache2 package. It's also an official image. It's optional to pull the image.

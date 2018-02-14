@@ -19,7 +19,7 @@ All kinds of images have been pulled and all sorts of containers might be runnin
 
 1. (Optional) List all stopped and running container ID's. 
 
-  `docker ps -qa`.
+  `docker ps -qa`
 
 2. Stop all running containers. This command gets all the docker container ID's and immediately uses them in the `docker stop` command.
 
@@ -48,6 +48,7 @@ All kinds of images have been pulled and all sorts of containers might be runnin
 8. Verify all images and containers have been deleted.
 
   `docker images`
+  
   `docker ps -a`
   
 

@@ -45,9 +45,11 @@ Please log in to your AWS instance running CentOS 7.
     1. Click `Browse`.
     1. Choose the .ppk file: `lab_ManagementKey.ppk`.
 1. Under `Session`
-    1. Fill in `centos@instanceteam<your_ID>.gluo.cloud`.
+    1. Fill in `centos@instanceteam<your_ID>.workshop.gluo.cloud`.
     1. Click `Open`.
 1. Accept the fingerprint (if asked).
+1. `sudo su -`
+    * Become the root user.
   
     ![](../Images/AWSPuttyLoginWindows.png?raw=true)
     
@@ -56,15 +58,18 @@ Please log in to your AWS instance running CentOS 7.
 1. Open your Terminal.
 1. `chmod 600 lab_ManagementKey` 
     * Make sure the key file has no permissions on anyone but the owner.
-1. `ssh -i lab_ManagementKey centos@instanceteam<your_ID>.gluo.cloud` 
+1. `ssh -i lab_ManagementKey centos@instanceteam<your_ID>.workshop.gluo.cloud` 
     * Log in to the server with the private key.
 1. Accept the fingerprint (if asked).
+1. `sudo su -`
+    * Become the root user.
 
     ![](../Images/AWSLoginToInstance.png?raw=true)
   
 
 ## Update scoring
 Run `checkscore` once your reach this task to update your scoring for this lab!
+  * Note: If this fails, become root with `sudo su -`, then execute `checkscore`.
 
 
 ## Conclusion
