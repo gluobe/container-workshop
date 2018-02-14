@@ -16,25 +16,35 @@ Before this workshop we installed a non-containerized Openshift Master Instance,
 
 1. Destroy your Openshift Containerized Cluster.
 
-  `oc cluster down`
+  ```
+  oc cluster down
+  ```
   
 2. Relevant Openshift containers have stopped running and have been cleaned up.
 
-  `docker ps -a`
+  ```
+  docker ps -a
+  ```
   
 3. Start the `origin-node` service.
 
-  `systemctl start origin-node`
+  ```
+  systemctl start origin-node
+  ```
   
 4. You will see your instance join the master instance on the classroom projector.
 
 5. Log in to the master. Username is `gluo`, password is `canihaveaccessplease`.
   
-  `oc login https://master.workshop.gluo.cloud:8443`
+  ```
+  oc login https://master.workshop.gluo.cloud:8443
+  ```
   
 6. Look if other teams have joined the cluster.
 
-  `oc get nodes`
+  ```
+  oc get nodes
+  ```
   
 
 ## Update scoring
