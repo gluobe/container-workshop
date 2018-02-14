@@ -5,9 +5,9 @@
 > **Time**: 15 minutes
 
 > **Tasks**:
->- [Task 1: Install the OC binary](#task-1-install-the-oc-binary)
-- [Task 2: Start a cluster](#task-2-start-a-cluster)
-- [Task 3: Verify installation](#task-3-verify-installation)
+> - [Task 1: Install the OC binary](#task-1-install-the-oc-binary)
+> - [Task 2: Start a cluster](#task-2-start-a-cluster)
+> - [Task 3: Verify installation](#task-3-verify-installation)
 
 ## What is Openshift?
 

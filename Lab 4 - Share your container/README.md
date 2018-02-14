@@ -5,9 +5,9 @@
 > **Time**: 10 minutes
 
 > **Tasks**:
->- [Task 1: Share your image with Docker Hub](#task-1-share-your-image-with-docker-hub)
-- [Task 2: Update your shared image](#task-2-update-your-shared-image)
-- [Task 3: Share on Slack](#task-3-share-on-slack)
+> - [Task 1: Share your image with Docker Hub](#task-1-share-your-image-with-docker-hub)
+> - [Task 2: Update your shared image](#task-2-update-your-shared-image)
+> - [Task 3: Share on Slack](#task-3-share-on-slack)
 
 > **Credits**: This lab is a modified version of [https://github.com/docker/dceu_tutorials](https://github.com/docker/dceu_tutorials)
 

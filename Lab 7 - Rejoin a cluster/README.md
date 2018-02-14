@@ -5,7 +5,7 @@
 > **Time**: 5 minutes
 
 > **Tasks**:
->- [Task 1: Join a cluster](#task-1-join-a-cluster)
+> - [Task 1: Join a cluster](#task-1-join-a-cluster)
 
 
 ## Task 1: Join a cluster

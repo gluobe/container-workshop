@@ -5,17 +5,17 @@
 > **Time**: 30-40 minutes
 
 > **Tasks**:
->- [Task 1: Create a project](#task-1-create-a-project)
-- [Task 2: Create an application](#task-2-create-an-application)
-- [Task 3: Expose the application](#task-3-expose-the-application)
-- [Task 4: Enable https](#task-4-enable-https)
-- [Task 5: Scale your application](#task-5-scale-your-application)
-- [Task 6: Versioning](#task-6-versioning)
-- [Task 7: Rollback](#task-7-rollback)
-- [Task 8: Logging](#task-8-logging)
-- [Task 9: Pod shell access](#task-9-pod-shell-access)
-- [Task 10: Deploy from source](#task-10-deploy-from-source)
-- [Task 11: Templates](#task-11-templates)
+> - [Task 1: Create a project](#task-1-create-a-project)
+> - [Task 2: Create an application](#task-2-create-an-application)
+> - [Task 3: Expose the application](#task-3-expose-the-application)
+> - [Task 4: Enable https](#task-4-enable-https)
+> - [Task 5: Scale your application](#task-5-scale-your-application)
+> - [Task 6: Versioning](#task-6-versioning)
+> - [Task 7: Rollback](#task-7-rollback)
+> - [Task 8: Logging](#task-8-logging)
+> - [Task 9: Pod shell access](#task-9-pod-shell-access)
+> - [Task 10: Deploy from source](#task-10-deploy-from-source)
+> - [Task 11: Templates](#task-11-templates)
 
 
 ## Projects
