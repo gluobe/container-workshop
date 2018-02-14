@@ -27,8 +27,11 @@ Some projects have been created already. These house
 Projects act as a "wrapper" around all the application services and endpoints you or your teams are using for your work. For this first lab, we are going to use a project named **myproject** that has been created automatically.
 
   `oc new-project newproject`
+  
   `oc project`
+  
   `oc projects`
+  
   `oc get project` 
 
 
@@ -39,6 +42,7 @@ Before we start digging in we need to understand how containers and Pods are rel
 Each pod has its own IP address, therefore owning its entire port space, and containers within pods can share storage. Pods can be "tagged" with one or more labels, which are then used to select and manage groups of pods in a single operation.
 
   `oc get pods`
+  
   `oc describe pod <pod>`
 
 
@@ -49,7 +53,9 @@ Services provide a convenient abstraction layer inside OpenShift to find a group
 When you ask OpenShift to run an image, it automatically creates a Service for you. Remember that services are an internal construct. They are not available to the "outside world" by default but exposing the service by creating a route will make it available.
 
   `oc get svc`
+  
   `oc describe svc <svc>`
+  
   `oc expose svc <svc>`
   
   
@@ -74,6 +80,7 @@ An OpenShift route is a way to expose a service by giving it an externally-reach
 While Services provide routing and load balancing for Pods, which may go in and out of existence, ReplicationControllers (RC) are used to specify and then ensure the desired number of Pods (replicas) are in existence. For example, if you always want your application server to be scaled to 3 Pods (instances), a ReplicationController is needed. Without an RC, any Pods that are killed or somehow die/exit are not automatically restarted. ReplicationControllers are how OpenShift "self heals".
 
   `oc get rc`
+  
   `oc describe rc <rc>`
 
 
@@ -82,8 +89,11 @@ While Services provide routing and load balancing for Pods, which may go in and 
 In the simplest case, a deployment just creates a new replication controller and lets it start up pods. However, OpenShift Container Platform deployments also provide the ability to transition from an existing deployment of an image to a new one and also define hooks to be run before or after creating the replication controller.
 
   `oc get dc`
+  
   `oc describe dc <dc>`
+  
   `oc scale <dc> --replicas=3`
+  
   `oc rollback <dc>`
   
 
@@ -92,6 +102,7 @@ In the simplest case, a deployment just creates a new replication controller and
 A deployment's image connection with repositories, external or internal. An image stream comprises one or more Docker images identified by tags. OpenShift components such as builds and deployments can watch an image stream to receive notifications when new images are added and react by performing a build or a deployment.
 
   `oc get imagestream`
+  
   `oc tag <new_image_name> <project/imagestream_with_initial_tag>`
 
 
@@ -101,19 +112,29 @@ Being logged in to the Openshift master instance allows us to log in as the syst
 
 1. Log in as the system administrator.
 
-  `oc login -u system:admin`
+  ```
+  oc login -u system:admin
+  ```
 
-  `oc whoami`
+  ```
+  oc whoami
+  ```
 
 2. Create a new project called `workshop`. You'll automatically switch to that new project.
 
-  `oc new-project workshop`
+  ```
+  oc new-project workshop
+  ```
 
 3. List all projects and view a project's status
 
-  `oc projects`
+  ```
+  oc projects
+  ```
   
-  `oc get project`
+  ```
+  oc get project
+  ```
 
 
 ## Task 2: Create an application
@@ -121,7 +142,9 @@ Being logged in to the Openshift master instance allows us to log in as the syst
 1. Create a new application by specifying your docker repository image and tag.
   NOTE: It is possible to use your own Docker hub registry image but unfortunately it does not natively work with Openshift. A filled in .json template is needed for the application to work properly. The app-os image is modified to work with Openshift.
 
-  `oc new-app leynebe/app-os:v1`
+  ```
+  oc new-app leynebe/app-os:v1
+  ```
 
 2. Go to your browser and switch to the `workshop` project.
 
@@ -134,11 +157,15 @@ Being logged in to the Openshift master instance allows us to log in as the syst
 
 1. Create a route for the service that's linked to our application pod.
   
-  `oc expose svc app-os`
+  ```
+  oc expose svc app-os
+  ```
 
 2. List all routes of this project.
 
-  `oc get routes`
+  ```
+  oc get routes
+  ```
   
 3. Go to your browser and into your workshop project. An **http** link should have appeared, click it. The webpage should display the `v1` tag in the color `beige`.
 
@@ -151,11 +178,15 @@ If our application hosted sensitive data we'd be exposing it to the outside worl
 
 1. Set the default editor for the Openshift binary. Choose between `vi`, `vim`, `emacs`, `nano`, make sure your chosen option is installed.
 
-  `export OC_EDITOR=<choice>`
+  ```
+  export OC_EDITOR=<choice>
+  ```
 
 1. Edit the existing route we created by exposing the service.
 
-  `oc edit route app-os`
+  ```
+  oc edit route app-os
+  ```
   
 2. Add `tls:` as a child of `spec:`, then add `termination: edge` as a child of `tls:`. It should look something like the following:
 
@@ -182,14 +213,18 @@ Scaling pods up or down is done by calling the Deployment Configuration (DC) wit
 
 1. Get info on the DC and RC. For now we're on revision 1 and have 1 pod.
 
-  `oc get dc`
+  ```
+  oc get dc
+  ```
   
   ```
   NAME      REVISION   DESIRED   CURRENT   TRIGGERED BY
   app-os    1          1         1         config,image(app-os:v1)
   ```
   
-  `oc get rc`
+  ```
+  oc get rc
+  ```
   
   ```
   NAME       DESIRED   CURRENT   READY     AGE
@@ -198,7 +233,9 @@ Scaling pods up or down is done by calling the Deployment Configuration (DC) wit
 
 2. Scale the application and immediately watch the pods.
 
-  `oc scale dc/app-os --replicas=2`
+  ```
+  oc scale dc/app-os --replicas=2
+  ```
 
 3. If you quickly go back to the Openshift application page you'll see we're upscaling to 2 pods. You can also use the Openshift browser interface to easily scale up and down with the up and down arrows instead of using commands.
 
@@ -206,14 +243,18 @@ Scaling pods up or down is done by calling the Deployment Configuration (DC) wit
 
 4. Check out DC and RC changes. We're still on revision one (using the :v1 image) but we've upscaled to 2 pods.
 
-  `oc get dc`
+  ```
+  oc get dc
+  ```
   
   ```
   NAME      REVISION   DESIRED   CURRENT   TRIGGERED BY
   app-os    1          2         2         config,image(app-os:v1)
   ```
   
-  `oc get rc`
+  ```
+  oc get rc
+  ```
   
   ```
   NAME       DESIRED   CURRENT   READY     AGE
@@ -227,7 +268,9 @@ We can deploy another version of our application by tagging the Image Stream (IS
 
 1. Get the <IMAGE> and <TAG> name by looking at the image stream. It should be `app-os` and `v1` and the image stream name will stay like that.
 
-  `oc get is`
+  ```
+  oc get is
+  ```
   
   ```
   NAME      DOCKER REPO                        TAGS      UPDATED
@@ -236,7 +279,9 @@ We can deploy another version of our application by tagging the Image Stream (IS
 
 2. Tag the imagestream with an image from the Docker Hub with another tag.
 
-  `oc tag docker.io/leynebe/app-os:v2 workshop/app-os:v1`
+  ```
+  oc tag docker.io/leynebe/app-os:v2 workshop/app-os:v1
+  ```
 
 3. Quickly look at the Openshift Application page to see the deployment downscale the v1 pods and upscale the v2 pods.
 
@@ -248,20 +293,28 @@ We can deploy another version of our application by tagging the Image Stream (IS
 
 4. Try out other versions v3 and v4
 
-  `oc tag docker.io/leynebe/app-os:v3 workshop/app-os:v1`
+  ```
+  oc tag docker.io/leynebe/app-os:v3 workshop/app-os:v1
+  ```
   
-  `oc tag docker.io/leynebe/app-os:v4 workshop/app-os:v1`
+  ```
+  oc tag docker.io/leynebe/app-os:v4 workshop/app-os:v1
+  ```
   
 5. Check out DC and RC changes.
 
-  `oc get dc`
+  ```
+  oc get dc
+  ```
   
   ```
   NAME      REVISION   DESIRED   CURRENT   TRIGGERED BY
   app-os    2          2         2         config,image(app-os:v1)
   ```
   
-  `oc get rc`
+  ```
+  oc get rc
+  ```
   
   ```
   NAME       DESIRED   CURRENT   READY     AGE
@@ -276,13 +329,17 @@ Not content with a new deployment? Roll back your previous deployment by using t
 
 1. Roll back to a previous deployment
 
-  `oc rollback app-os`
+  ```
+  oc rollback app-os
+  ```
 
 2. Refresh the page. (Hard refresh might be necessary CTRL/CMD+SHIFT+R)
   
 3. Or roll back to a named deployment
 
-  `oc rollback app-os-1`
+  ```
+  oc rollback app-os-1
+  ```
   
 4. Refresh the page. (Hard refresh might be necessary CTRL/CMD+SHIFT+R)
 
@@ -293,17 +350,27 @@ It's not possible for the base CLI commands to display as much information as in
 
 1. Using `oc edit` we can edit any resource instantly. We can also just output the resource settings to the screen in different formats like YAML or JSON.
 
-  `oc get dc app-os -o yaml`
+  ```
+  oc get dc app-os -o yaml
+  ```
 
-  `oc get rc app-os -o json`
+  ```
+  oc get rc app-os -o json
+  ```
 
-  `oc get pods`
+  ```
+  oc get pods
+  ```
   
-  `oc get pod <pod_name> -o yaml`
+  ```
+  oc get pod <pod_name> -o yaml
+  ```
 
 2. Get the logs of any pod to troubleshoot issues with `oc logs <pod_name>`.
 
-  `oc logs <pod_name>`
+  ```
+  oc logs <pod_name>
+  ```
 
 
 ## Task 9: Pod shell access
@@ -312,13 +379,19 @@ Easily accessible logs not enough for you? Just like `docker exec` we can access
 
 1. Enter a pod.
 
-  `oc get pods`
+  ```
+  oc get pods
+  ```
 
-  `oc rsh <pod_name>`
+  ```
+  oc rsh <pod_name>
+  ```
 
 2. Print its index.html page contents.  
 
-  `cat /usr/share/nginx/html/index.html`
+  ```
+  cat /usr/share/nginx/html/index.html
+  ```
   
   
 ## Task 10: Deploy from source
@@ -327,7 +400,9 @@ Openshift is able to deploy containers directly from the source code on Github i
 
 1. Create a new php application.
 
-  `oc new-app https://github.com/openshift/cakephp-ex.git`
+  ```
+  oc new-app https://github.com/openshift/cakephp-ex.git
+  ```
 
 2. Click the created route for the new application.
 
@@ -338,21 +413,33 @@ You can find many more examples by browsing the catalog from the browser interfa
 
 Using this YAML or JSON we can define templates which we then use to create certain resources. Imagine having to deploy 100 application with minor changes via the web browser... This is made a million times easier using templating.
 
-  `oc create -f <template.yaml>`
+  ```
+  oc create -f <template.yaml>
+  ```
   
 1. Git clone this repository to get the yaml files located in this lab to your instance.
 
-    `git clone https://github.com/gluobe/container-workshop-pxl ~/docker-openshift-repo` 
+  ```
+  git clone https://github.com/gluobe/container-workshop ~/docker-openshift-repo
+  ```
 
 2. Execute every one of them in this order with the following commands:
 
-    `oc create -f project.yaml`
+  ```
+  oc create -f project.yaml
+  ```
     
-    `oc create -f pod.yaml -n hello-openshift-project`    
+  ```
+  oc create -f pod.yaml -n hello-openshift-project
+  ```
     
-    `oc create -f service.yaml -n hello-openshift-project`    
+  ```
+  oc create -f service.yaml -n hello-openshift-project
+  ```
     
-    `oc create -f route.yaml -n hello-openshift-project`   
+  ```
+  oc create -f route.yaml -n hello-openshift-project
+  ```
     
 3. Go to your project named `hello-openshift-project` in your browser and visit the application via the route.
 
