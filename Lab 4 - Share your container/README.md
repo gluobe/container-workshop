@@ -161,7 +161,7 @@ Run `checkscore` once your reach this task to update your scoring for this lab!
 
 ## Task 3: Share on Slack
 
-Share your full docker image name through `#general` on Slack and try to run some of the containers of your colleagues:
+Share your full customized docker image name through `#general` on Slack (https://join.slack.com/t/gluoworkshop) and try to run some of the containers of your colleagues:
 
   ```
   docker run -d -p 8081:80 --name mycontainer1  <OTHER_TEAM_DOCKER_HUB_USERNAME>/myimage:v1
