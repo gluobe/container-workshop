@@ -422,6 +422,10 @@ Using this YAML or JSON we can define templates which we then use to create cert
   ```
   git clone https://github.com/gluobe/container-workshop ~/docker-openshift-repo
   ```
+  
+  ```
+  cd ~/docker-openshift-repo/Lab*6*
+  ```
 
 2. Execute every one of them in this order with the following commands:
 
