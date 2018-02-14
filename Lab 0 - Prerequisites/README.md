@@ -46,25 +46,51 @@ Please log in to your AWS instance running CentOS 7.
     1. Choose the .ppk file: `lab_ManagementKey.ppk`.
 1. Under `Session`
     1. Fill in `centos@instanceteam<your_ID>.workshop.gluo.cloud`.
+    1. (Optional) Save this configuration in Putty with a profile so you can load it again.
     1. Click `Open`.
 1. Accept the fingerprint (if asked).
-1. `sudo su -`
-    * Become the root user.
+
+  ```
+  yes
+  ```
+
+1. Become the root user.
+
+  ```
+  sudo su -
+  ```
   
-    ![](../Images/AWSPuttyLoginWindows.png?raw=true)
+  ![](../Images/AWSPuttyLoginWindows.png?raw=true)
     
 ##### **On Linux or MacOS**
 
 1. Open your Terminal.
-1. `chmod 600 lab_ManagementKey` 
-    * Make sure the key file has no permissions on anyone but the owner.
-1. `ssh -i lab_ManagementKey centos@instanceteam<your_ID>.workshop.gluo.cloud` 
-    * Log in to the server with the private key.
-1. Accept the fingerprint (if asked).
-1. `sudo su -`
-    * Become the root user.
 
-    ![](../Images/AWSLoginToInstance.png?raw=true)
+1. Make sure the key file has no permissions on anyone but the owner.
+
+  ```
+  chmod 600 lab_ManagementKey
+  ```
+
+1. Log in to the server with the private key.
+
+  ```
+  ssh -i lab_ManagementKey centos@instanceteam<your_ID>.workshop.gluo.cloud
+  ```
+     
+1. Accept the fingerprint (if asked).
+
+  ```
+  yes
+  ```
+
+1. Become the root user.
+
+  ```
+  sudo su -
+  ```
+
+  ![](../Images/AWSLoginToInstance.png?raw=true)
   
 
 ## Update scoring
