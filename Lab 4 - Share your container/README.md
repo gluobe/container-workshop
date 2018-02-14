@@ -16,7 +16,9 @@
 
 1. Let's stop and remove our containers **but not our images** for the upcoming lab.
 
-  `docker stop $(docker ps -qa) && docker rm $(docker ps -qa) -f`
+  ```
+  docker stop $(docker ps -qa) && docker rm $(docker ps -qa) -f
+  ```
   
 2. Verify containers are gone **but not the images**. If you have, just rebuild your image with `docker build -t myimage:v1 .` inside your webserver directory.
 
@@ -39,7 +41,9 @@ Once you have an account, you can login. Logging in is required to push images t
 
 1. From the command line, log in to the Docker Hub with your credentials.
 
-  `docker login`
+  ```
+  docker login
+  ```
 
   > [root@instanceteam1 webserver]$ **docker login**
   >
@@ -68,7 +72,9 @@ Once you have an account, you can login. Logging in is required to push images t
 
 3. List your new image.
 
-  `docker images`
+  ```
+  docker images
+  ```
   
   ```
   REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
@@ -89,11 +95,15 @@ Once you have an account, you can login. Logging in is required to push images t
 
 6. Clean up your images to test pulling the image from your repository.
 
-  `docker rmi $(docker images -q) -f`
+  ```
+  docker rmi $(docker images -q) -f
+  ```
   
 7. Now that we have a clean slate, pull our public image again.
 
-  `docker pull <YOUR_DOCKER_HUB_USERNAME>/myimage:v1`
+  ```
+  docker pull <YOUR_DOCKER_HUB_USERNAME>/myimage:v1
+  ```
 
 
 ## Task 2: Update your shared image
@@ -102,35 +112,47 @@ Image tags can be anything you want them to be. Bear in mind Docker will automat
 
 1. Edit your index.php file with the following command or be creative and come up with something yourself :).
 
-  `echo '<?php echo "<html><body><img src=\"https://tinyurl.com/y8v5d9qr\"/></body></html>"; ?>' > index.php`
+  ```
+  echo '<?php echo "<html><body><img src=\"https://tinyurl.com/y8v5d9qr\"/></body></html>"; ?>' > index.php
+  ```
 
 2. Build your image again but with a different tag.
 
-  `docker build -t myimage:v2 .`
+  ```
+  docker build -t myimage:v2 .
+  ```
   
   NOTE: This build went super fast since the `FROM php:apache` layer it was built from already existed from our previous build.
 
-2. Run the container yourself to verify it works.
+3. Run the container yourself to verify it works.
 
-  `docker run -dp 8080:80 myimage:v2`
+  ```
+  docker run -dp 8080:80 myimage:v2
+  ```
   
-  And go to http://instanceteam<YOUR_ID>.workshop.gluo.cloud:8080
+4. Go to http://instanceteam<YOUR_ID>.workshop.gluo.cloud:8080 or use `curl localhost:8080`
+
+5. Stop the container.
+
+  ```
+  docker ps
+  ```
   
-  Or use `curl localhost:8080`
+  ```
+  docker stop <CONTAINER_ID>
+  ```
 
-3. Stop the container.
+6. Tag it to include you Hub name.
 
-  `docker ps`
-  
-  `docker stop <CONTAINER_ID>`
+  ```
+  docker tag myimage:v2 <YOUR_DOCKER_HUB_USERNAME>/myimage:v2
+  ```
 
-3. Tag it to include you Hub name.
+7. Push it to your registry.
 
-  `docker tag myimage:v2 <YOUR_DOCKER_HUB_USERNAME>/myimage:v2`
-
-4. Push it to your registry.
-
-  `docker push <YOUR_DOCKER_HUB_USERNAME>/myimage:v2`
+  ```
+  docker push <YOUR_DOCKER_HUB_USERNAME>/myimage:v2
+  ```
 
 
 ## Update scoring
