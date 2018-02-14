@@ -5,11 +5,11 @@
 > **Time**: 15 minutes
 
 > **Tasks**:
->- [Prerequisites](#prerequisites)
-- [Task 1: Running your first container](#task-1-running-your-first-container)
-- [Task 2: Distinguishing images and containers](#task-2-distinguishing-images-and-containers)
-- [Task 3: Run an existing container](#task-3-run-an-existing-container)
-- [Task 4: Enter the container](#task-4-enter-the-container)
+> - [Prerequisites](#prerequisites)
+> - [Task 1: Running your first container](#task-1-running-your-first-container)
+> - [Task 2: Distinguishing images and containers](#task-2-distinguishing-images-and-containers)
+> - [Task 3: Run an existing container](#task-3-run-an-existing-container)
+> - [Task 4: Enter the container](#task-4-enter-the-container)
 
 > **Credits**: This lab is a modified version of [https://github.com/docker/dceu_tutorials](https://github.com/docker/dceu_tutorials)
 

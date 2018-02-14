@@ -6,9 +6,9 @@
 
 > **Tasks**
 > - [Task 1: Slack](#task-1-slack)
-- [Task 2: GitHub](#task-2-github)
-- [Task 3: Docker Hub](#task-3-docker-hub)
-- [Task 4: Instance Login](#task-4-instance-login)
+> - [Task 2: GitHub](#task-2-github)
+> - [Task 3: Docker Hub](#task-3-docker-hub)
+> - [Task 4: Instance Login](#task-4-instance-login)
 
 ## Task 1: Slack
 

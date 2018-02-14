@@ -6,8 +6,8 @@
 
 > **Tasks**
 > - [Task 1: Installation](#task-1-installation)
-- [Task 2: Configuration](#task-2-configuration)
-- [Task 3: Verification](#task-3-verification)
+> - [Task 2: Configuration](#task-2-configuration)
+> - [Task 3: Verification](#task-3-verification)
 
 ## Task 1: Installation
 
