@@ -202,15 +202,21 @@ Let's run a container that's actually of any use. An apache webserver is used to
   
 2. We'll take httpd, which is the Red Hat distribution equivalent of the Ubuntu apache2 package. It's also an official image. It's optional to pull the image.
 
- `docker pull httpd:latest`
+  ```
+  docker pull httpd:latest
+  ```
  
 3. Then run the container on ports 80 in detached mode.
  
- `docker run -dp 80:80 httpd:latest`
+  ```
+  docker run -dp 80:80 httpd:latest
+  ```
  
 4. Observe the container's output on port 80.
  
- `curl localhost:80`
+  ```
+  curl localhost:80
+  ```
  
  Or go to your browser, and type `instanceteam<YOUR_ID>.workshop.gluo.cloud:80`.
  
@@ -218,7 +224,9 @@ Let's run a container that's actually of any use. An apache webserver is used to
  
 5. It didn't quit like our hello-world container, it's still running.
 
- `docker ps`
+  ```
+  docker ps
+  ```
  
  
 ## Task 4: Enter the container
@@ -227,11 +235,17 @@ The `docker exec` command is used to execute commands in the container as long a
 
 1. First fetch the container's ID. 
 
-  `docker ps`, copy the `CONTAINER ID` field to your clipboard.
+  ```
+  docker ps
+  ```
+  
+2. Copy the `CONTAINER ID` field of the container to your clipboard.
 
-2. Let's find all files named "index.html" in the container.
+3. Let's find all files named "index.html" in the container.
 
-  `docker exec <CONTAINER_ID> find / -name index.html`
+  ```
+  docker exec <CONTAINER_ID> find / -name index.html
+  ```
   
   ``` 
   /usr/local/apache2/htdocs/index.html
@@ -241,19 +255,23 @@ The `docker exec` command is used to execute commands in the container as long a
   /usr/share/doc/libexpat1-dev/expat.html/index.html
   ```
 
-3. Using the CLI we can enter the container and execute a limited set of commands. Limited since the container isn't a full OS and parts deemed unnecessary were trimmed from it to make it as lightweight as possible. The "-ti" flags in the following command are used to link the container's CLI to our current terminal window and make it interactive.
+4. Using the CLI we can enter the container and execute a limited set of commands. Limited since the container isn't a full OS and parts deemed unnecessary were trimmed from it to make it as lightweight as possible. The "-ti" flags in the following command are used to link the container's CLI to our current terminal window and make it interactive.
 
-  `docker exec -ti <CONTAINER_ID> /bin/bash`
+  ```
+  docker exec -ti <CONTAINER_ID> /bin/bash
+  ```
   
-4. Change the "index.html" file to your liking, but please keep it decent :).
+5. Change the "index.html" file to your liking, but please keep it decent :).
 
   ```
   echo '<html><body><img src="https://i.imgur.com/iZcUNxH.gif"/></body></html>' > /usr/local/apache2/htdocs/index.html
   ```
   
-5. Exit the container.
+6. Exit the container.
 
-  `exit`
+  ```
+  exit
+  ```
 
 
 ## Update scoring

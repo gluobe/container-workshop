@@ -19,37 +19,55 @@ All kinds of images have been pulled and all sorts of containers might be runnin
 
 1. (Optional) List all stopped and running container ID's. 
 
-  `docker ps -qa`
+  ```
+  docker ps -qa
+  ```
 
 2. Stop all running containers. This command gets all the docker container ID's and immediately uses them in the `docker stop` command.
 
-  `docker stop $(docker ps -qa)`
+  ```
+  docker stop $(docker ps -qa)
+  ```
   
 3. Verify all containers have stopped. No containers should be listed.
 
-  `docker ps`
+  ```
+  docker ps
+  ```
   
 4. Look at the stopped containers. We can delete these as well.
 
-  `docker ps -a`
+  ```
+  docker ps -a
+  ```
 
 5. Remove all containers forcibly with the `docker rm` command.
-  
-  `docker rm $(docker ps -qa) -f`
+
+  ```
+  docker rm $(docker ps -qa) -f
+  ```
 
 6. (Optional) List all locally downloaded image ID's.
   
-  `docker images -q`
+  ```
+  docker images -q
+  ```
 
 7. Remove all your images by using the following command, the -f flag will delete images with dependencies. Again we're passing ID's but this time image ID's to the `docker rmi` command to remove all images.
 
-  `docker rmi $(docker images -q) -f` 
+  ```
+  docker rmi $(docker images -q) -f
+  ``` 
   
 8. Verify all images and containers have been deleted.
 
-  `docker images`
+  ```
+  docker images
+  ```
   
-  `docker ps -a`
+  ```
+  docker ps -a
+  ```
   
 
 ## Task 1: Building Images from a Dockerfile
