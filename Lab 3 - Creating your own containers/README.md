@@ -5,10 +5,10 @@
 > **Time**: 15 minutes
 
 > **Tasks**:
->- [Task 0: Stop and remove images and containers](#task-0-stop-and-remove-images-and-containers)
-- [Task 1: Building Images from a Dockerfile](#task-1-building-images-from-a-dockerfile)
-- [Task 2: Running Containers](#task-2-running-containers)
-- [Task 3: Maintaining Containers](#task-3-maintaining-containers)
+> - [Task 0: Stop and remove images and containers](#task-0-stop-and-remove-images-and-containers)
+> - [Task 1: Building Images from a Dockerfile](#task-1-building-images-from-a-dockerfile)
+> - [Task 2: Running Containers](#task-2-running-containers)
+> - [Task 3: Maintaining Containers](#task-3-maintaining-containers)
 
 > **Credits**: This lab is a modified version of [https://github.com/docker/dceu_tutorials](https://github.com/docker/dceu_tutorials)
 
