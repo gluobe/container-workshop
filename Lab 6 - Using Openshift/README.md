@@ -316,11 +316,11 @@ We can deploy another version of our application by tagging the Image Stream (IS
   oc get rc
   ```
   
-  
->  NAME       DESIRED   CURRENT   READY     AGE
->  app-os-1   0         0         0         32m
->  app-os-2   2         2         2         2m
-
+  ```
+  NAME       DESIRED   CURRENT   READY     AGE
+  app-os-1   0         0         0         32m
+  app-os-2   2         2         2         2m
+  ```
 
 
 ## Task 7: Rollback
