@@ -23,5 +23,5 @@ As we will be using Linux systems from the public cloud ([AWS](https://aws.amazo
 * [03 - Creating your own containers](Lab%203%20-%20Creating%20your%20own%20containers)
 * [04 - Share your container](Lab%204%20-%20Share%20your%20container)
 * [05 - Install Openshift](Lab%205%20-%20Install%20Openshift)
-* [06 - Using Openshift](Lab%206%20-%%20Using%20Openshift)
+* [06 - Using Openshift](Lab%206%20-%20Using%20Openshift)
 * [07 - Rejoin a cluster](Lab%207%20-%20Rejoin%20a%20cluster)

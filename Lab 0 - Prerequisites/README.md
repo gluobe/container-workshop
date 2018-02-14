@@ -30,24 +30,21 @@ If you do not have a Docker Hub account, please sign up for a free account:
 
 ## Task 4: Instance Login
 
-Please log in to your AWS instance running CentOS 7.
+Please log in to your AWS instance running CentOS 7. Windows users will need  [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
-* Windows users will need  [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
-
-1. Receive the following information from the Workshop Tutors:
-    * `<your_ID>`
-1. [Download your ssh private key](http://info.workshop.gluo.cloud/index.html) which is used as authorization when logging into your CentOS instance.
+1. Receive the following information from the Workshop Tutors: `<your_ID>`.
+1. [Download your ssh private key](http://info.workshop.gluo.cloud/index.html) which is used as authorization when logging in to your CentOS instance.
 
 ##### **On Windows**
 
 1. Open Putty.
 2. Under `Connection->SSH->Auth`
     1. Click `Browse`.
-    1. Choose the .ppk file: `lab_ManagementKey.ppk`.
+    2. Choose the .ppk file: `lab_ManagementKey.ppk`.
 3. Under `Session`
     1. Fill in `centos@instanceteam<your_ID>.workshop.gluo.cloud`.
-    1. (Optional) Save this configuration in Putty with a profile so you can load it again.
-    1. Click `Open`.
+    2. (Optional) Save this configuration in Putty with a profile so you can load it again.
+    3. Click `Open`.
 4. Accept the fingerprint (if asked).
 
   ```
