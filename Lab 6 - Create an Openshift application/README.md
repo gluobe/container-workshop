@@ -1,4 +1,4 @@
-# Lab 06 : Using Openshift
+# Lab 06 : Create an Openshift application
 
 > **Difficulty**: Medium
 
@@ -334,6 +334,6 @@ Run `checkscore` once your reach this task to update your scoring for this lab!
   
 ## Conclusion
 
-Congratulations, You have successfully completed this lab! You learned some basic Container Management concepts and how to work with Openshift via the commandline.
+Congratulations, You have successfully completed this lab! You learned how webhooks, base-images, repositories work and how to create your own Openshift application using the Openshift `new-app` command.
 
-Continue to the next lab. ([Next lab](../Lab%207%20-%20Rejoin%20a%20cluster))
+Continue to the next lab. ([Next lab](../Lab%207%20-%20Improving%20the%0application))

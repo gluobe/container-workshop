@@ -143,4 +143,4 @@ Run `checkscore` once your reach this task to update your scoring for this lab!
 
 Congratulations, You have successfully completed this lab! You learned how to install Openshift and log in via the CLI and via the web.
 
-Continue to the next lab. ([Next lab](../Lab%206%20-%20Using%20Openshift))
+Continue to the next lab. ([Next lab](../Lab%206%20-%20Create%20an%20Openshift%20application))
