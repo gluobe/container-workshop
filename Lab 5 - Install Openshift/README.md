@@ -114,7 +114,7 @@ Next we'll start the containerized cluster. We'll have to specify the public DNS
   oc login -u system:admin
   ```
 
-4. Give the user with whom we'll login privileges. (You can choose any name.)
+4. Give your login user privileges. (You can choose any name.)
 
   ```
   oc adm policy add-cluster-role-to-user cluster-admin <YOUR_NAME>
