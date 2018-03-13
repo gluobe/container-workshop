@@ -135,7 +135,13 @@ Easily accessible logs not enough for you? Just like `docker exec` we can access
 2. Print its index.html page contents.  
 
   ```
-  cat /usr/share/nginx/html/index.html
+  cat /app/index.php
+  ```
+
+3. Exit the container/pod.
+
+  ```
+  exit
   ```
   
   

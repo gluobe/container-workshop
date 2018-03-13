@@ -14,7 +14,7 @@
 
 The `oc cluster` command has allowed us to run Openshift in a containerized manner. Meaning Openshift itself runs in containers as well as the applications. This is a quick and dirty method for testing out Openshift.
 
-Before this workshop we installed a non-containerized Openshift Master Instance, which had all of your instances as nodes. We'll now reconnect to the Master Instance to form one big Openshift Cluster.
+Before this workshop me and Steven installed a non-containerized Openshift Master Instance, which had all of your instances as nodes. We'll now reconnect to the Master Instance to form one big Openshift Cluster with all your team instances.
 
 1. Destroy your Openshift Containerized Cluster.
 
@@ -34,7 +34,7 @@ Before this workshop we installed a non-containerized Openshift Master Instance,
   systemctl start origin-node
   ```
   
-4. You will see your instance join the master instance on the classroom projector (or via this link `http://kube-ops-view-ocp-ops-view.apps.workshop.gluo.io`).
+4. You will see your instance join the master instance on the classroom projector (or via this link `http://kube-ops-view-ocp-ops-view.apps.workshop.gluo.cloud`).
 
 5. Log in to the master. Username is `gluo`, password is `canihaveaccessplease`. 
   
@@ -122,20 +122,6 @@ Now let's scale up and destroy some pods. :)
 
   ```
   oc scale dc httpd-example-team<YOUR_ID> --replicas=2 -n team-apps 
-  ```
-
-6. When you're done, drain your pods from your instance by identifying the right ip-address and correlating it with the node.
-
-  ```
-  ifconfig | grep 172.31 | awk '{print $2}'
-  ```
-  
-  ```
-  oc get nodes
-  ```
-  
-  ```
-  oc adm drain ip-<YOUR_PRIVATE_IP>.us-east-2.compute.internal
   ```
 
 
