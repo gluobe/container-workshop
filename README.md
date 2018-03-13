@@ -4,7 +4,7 @@ In this hands-on workshop you will learn how to:
 
 * Install Docker on a Linux system
 * Learn the basics of Docker (searching for images, running containers, building images, publishing images,...) 
-* Creating your own images, turn them into containers and push them to your own registry.
+* Create your own images, turn them into containers and push them to your own registry.
 * Setup an Openshift cluster to manage containerized applications.
 * Deploy, scale and update applications in Openshift.
 
@@ -23,5 +23,16 @@ As we will be using Linux systems from the public cloud ([AWS](https://aws.amazo
 * [03 - Creating your own containers](Lab%203%20-%20Creating%20your%20own%20containers)
 * [04 - Share your container](Lab%204%20-%20Share%20your%20container)
 * [05 - Install Openshift](Lab%205%20-%20Install%20Openshift)
-* [06 - Using Openshift](Lab%206%20-%20Using%20Openshift)
-* [07 - Rejoin a cluster](Lab%207%20-%20Rejoin%20a%20cluster)
+* [06 - Create an Openshift application](Lab%206%20-%20Create%20an%20Openshift%20application)
+* [07 - Improving the application](Lab%207%20-%20Improving%20the%20application)
+* [08 - Join a cluster](Lab%208%20-%20Join%20a%20cluster)
+
+## People 
+
+* Steven Trescinski: 	steven.trescinski@gluo.be
+* Ben Leynen: 		ben@gluo.be 
+
+## More info 
+
+* [Our Website](http://www.gluo.be)
+
