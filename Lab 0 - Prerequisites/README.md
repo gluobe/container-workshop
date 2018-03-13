@@ -57,7 +57,7 @@ Please log in to your AWS instance running CentOS 7. Windows users will need  [P
   sudo su -
   ```
   
-  ![](../Images/AWSPuttyLoginWindows.png?raw=true =375x250)
+  ![](../Images/AWSPuttyLoginWindows.png?raw=true)
     
 ##### **On Linux or MacOS**
 
