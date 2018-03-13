@@ -29,7 +29,7 @@ As we will be using Linux systems from the public cloud ([AWS](https://aws.amazo
 
 ## People 
 
-* Steven Trescinski: 	steven.trescinski@gluo.be
+* Steven Trescinski: 	steven@gluo.be
 * Ben Leynen: 		ben@gluo.be 
 
 ## More info 
