@@ -119,7 +119,7 @@ Image tags can be anything you want them to be. Bear in mind Docker will automat
 2. Build your image again but with a different tag.
 
   ```
-  docker build -t myimage:v2 .
+  docker build -t myimage:v2 ./
   ```
   
   NOTE: This build went super fast since the `FROM php:apache` layer it was built from already existed from our previous build.
@@ -161,7 +161,7 @@ Run `checkscore` once your reach this task to update your scoring for this lab!
 
 ## Task 3: Share on Slack
 
-Share your full customized docker image name through `#general` on Slack (https://join.slack.com/t/gluoworkshop) and try to run some of the containers of your colleagues:
+Share your full customized docker image name through `#general` on Slack  [https://join.slack.com/t/gluoworkshop](https://join.slack.com/t/gluoworkshop/shared_invite/enQtMzAzNzUxNzgwNzU0LWU5YWFlMGUwOGFkNjRjNmIxOTU3YjYwNjBlODljMTllYTZjNjAwNjYzZDUyYjJhMWM2NjIyNGZkYWRiZTAwYzA) and try to run some of the containers of your colleagues:
 
   ```
   docker run -d -p 8081:80 --name mycontainer1  <OTHER_TEAM_DOCKER_HUB_USERNAME>/myimage:v1

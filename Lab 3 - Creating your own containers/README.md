@@ -142,7 +142,7 @@ In the following task, you will be building a new image from a Dockerfile. You'l
 8. Build your image using the **Dockerfile**.
 
   ```
-  docker build -t myimage:v1 .
+  docker build -t myimage:v1 ./
   ```
 
   Docker goes through the Dockerfile instructions one line at a time. Each line in creates an **intermediate** image by creating a container from the previous line, running the current command, and committing that container into a new image. The process is repeated until the last command is successfully committed into an image. The last image is the final product of the build process and, in this case is tagged as 'myimage:v1'.

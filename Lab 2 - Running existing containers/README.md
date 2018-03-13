@@ -222,7 +222,7 @@ Let's run a container that's actually of any use. An apache webserver is used to
  
  It should display `<html><body><h1>It works!</h1></body></html>`.
  
-5. It didn't quit like our hello-world container, it's still running.
+5. It didn't quit like our hello-world container. This container is still running. Show the currently running containers with the following command.
 
   ```
   docker ps
