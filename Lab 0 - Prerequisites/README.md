@@ -93,6 +93,7 @@ Please log in to your AWS instance running CentOS 7. Windows users will need  [P
 ## Update scoring
 Run `checkscore` once your reach this task to update your scoring for this lab!
   * Note: If this fails, become root with `sudo su -`, then execute `checkscore`.
+  * Another note: You can mess with the checkscore scripts since you have root access and it's executing simple bash scripts, but let's keep it fair, alright? :)
 
 
 ## Conclusion

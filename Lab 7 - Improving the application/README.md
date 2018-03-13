@@ -179,4 +179,4 @@ Run `checkscore` once your reach this task to update your scoring for this lab!
 
 Congratulations, You have successfully completed this lab! You learned some various advanced Openshift features like scaling, logging and using the rollback system.
 
-Continue to the next lab. ([Next lab](../Lab%207%20-%20Improving%20the%0application))
+Continue to the next lab. ([Next lab](../Lab%208%20-%20Join%20a%20cluster))
