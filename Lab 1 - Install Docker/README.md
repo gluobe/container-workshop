@@ -19,12 +19,11 @@ yum install -y docker
 
 >Package 2:docker-1.12.6-71.git3e8e77d.el7.centos.1.x86_64 already installed and latest version
 
-It's already installed!
+It's already installed! This is because we already clustered your system with an Openshift Master earlier. We disconnected this instance from it for now and will be reconnecting it later. For future reference, installing Docker is (most of the time) as easy as doing a `yum install`!
 
 ## Task 2: Configuration
 
-Look at the docker service status. It's disabled (it won't start up on server start up) and inactive (not currently running).
-
+Look at the docker service status. Make sure it's running and enabled so it starts up on a reboot.
 ```
 systemctl status docker
 ```
@@ -55,21 +54,22 @@ You should get output similar to the output below:
 
 ```
 Client:
- Version:      1.13.1
- API version:  1.26
- Go version:   go1.7.5
- Git commit:   092cba3
- Built:        Wed Feb  8 06:50:14 2017
- OS/Arch:      linux/amd64
+ Version:         1.12.6
+ API version:     1.24
+ Package version: docker-1.12.6-71.git3e8e77d.el7.centos.1.x86_64
+ Go version:      go1.8.3
+ Git commit:      3e8e77d/1.12.6
+ Built:           Tue Jan 30 09:17:00 2018
+ OS/Arch:         linux/amd64
 
 Server:
- Version:      1.13.1
- API version:  1.26 (minimum version 1.12)
- Go version:   go1.7.5
- Git commit:   092cba3
- Built:        Wed Feb  8 06:50:14 2017
- OS/Arch:      linux/amd64
- Experimental: false
+ Version:         1.12.6
+ API version:     1.24
+ Package version: docker-1.12.6-71.git3e8e77d.el7.centos.1.x86_64
+ Go version:      go1.8.3
+ Git commit:      3e8e77d/1.12.6
+ Built:           Tue Jan 30 09:17:00 2018
+ OS/Arch:         linux/amd64
 ```
 
 If Docker is running properly, you should see both `Client` and `Server` version details. In this step, you issued a CLI command which communicated over the local Unix socket on which the daemon or service is listening. This socket is `/var/run/docker.sock` by default and is owned by `root`.
