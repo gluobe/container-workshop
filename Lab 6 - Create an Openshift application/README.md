@@ -86,7 +86,7 @@ The image we're about to build and push to our own Hub is an Openshift compatibl
 3. Build the image
 
   ```
-  docker build -t <YOUR_DOCKER_HUB_USERNAME>/openshift-webserver:latest .
+  docker build -t <YOUR_DOCKER_HUB_USERNAME>/openshift-webserver:latest ./
   ```
   
 4. Push the image to your Docker Hub.
@@ -306,6 +306,7 @@ Of course we don't want to press the build button every time we push a change to
   
   ![](../Images/GithubWebhookSuccessfullyCreated.png)
 
+8. If the webhook fails because you didn't make it correctly the first go around, try to make it again all in one go.
 
 ## Task 9: Test the webhook
 
