@@ -4,9 +4,10 @@ In this hands-on workshop you will learn how to:
 
 * Install Docker on a Linux system
 * Learn the basics of Docker (searching for images, running containers, building images, publishing images,...) 
-* Create your own images, turn them into containers and push them to your own registry.
-* Setup an Openshift cluster to manage containerized applications.
-* Deploy, scale and update applications in Openshift.
+* Create your own images, turn them into containers and push them to the Docker Hub registry.
+* Setup your own containerized Openshift cluster to manage other containerized applications.
+* Deploy, scale and update a Github webhook application on Openshift.
+* Join a non-containerized multi-instance Openshift Origin Cluster on AWS.
 
 ## Prerequisites
 
