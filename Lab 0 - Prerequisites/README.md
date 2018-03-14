@@ -8,8 +8,7 @@
 > - [Task 1: Slack](#task-1-slack)
 > - [Task 2: GitHub](#task-2-github)
 > - [Task 3: Docker Hub](#task-3-docker-hub)
-> - [Task 4: Change Team Name](#task-4-change-team-name)
-> - [Task 5: Instance Login](#task-5-instance-login)
+> - [Task 4: Instance Login](#task-4-instance-login)
 
 ## Task 1: Slack
 
@@ -29,16 +28,11 @@ If you do not have a Docker Hub account, please sign up for a free account:
 
 [https://hub.docker.com/](https://hub.docker.com/)
 
-## Task 4: Change Team Name
-
-1. You work in pairs of 2. You'll need a team ID which you use in certain commands in this workshop, it will be referenced with `<your_ID>`. Receive the following information from the Workshop Tutors: `<your_ID>`.
-2. Go to [the Scoring website](http://scoring.workshop.gluo.cloud).
-3. Change your team name matching the team with `<your_ID>`.
-
-## Task 5: Instance Login
+## Task 4: Instance Login
 
 Please log in to your AWS instance running CentOS 7. Windows users will need  [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
+1. You work in pairs of 2. You'll need a team ID which you use in certain commands in this workshop, it will be referenced with `<your_ID>`. Receive the following information from the Workshop Tutors: `<your_ID>`.
 1. [Download your ssh private key](http://info.workshop.gluo.cloud/index.html) which is used as authorization when logging in to your CentOS instance.
 
 ##### **On Windows**
